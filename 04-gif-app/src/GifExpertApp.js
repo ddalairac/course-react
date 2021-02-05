@@ -8,11 +8,11 @@ export const GifExpertApp = () => {
     // const categories = ['Fantasia','Ciencia Ficcion','Historico'] 
 
     // const [categories, setCategories] = useState(['Fantasia', 'Ciencia Ficcion', 'Historico'])
-    const [categories, setCategories] = useState(['Back to the future','star wars','scarlett johansson'])
+    const [categories, setCategories] = useState(['Back to the future', 'star wars', 'scarlett johansson'])
     function handleAdd(value) {
         // setCategories([...categories, 'Documental'])
         // setCategories(cats=>[...cats, 'Documental'])
-        setCategories([...categories, value])
+        setCategories([value, ...categories])
     }
     return (
         <>
