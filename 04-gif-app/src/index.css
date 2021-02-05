@@ -1,0 +1,29 @@
+body{
+    padding: 30px;
+}
+*{
+    box-sizing: border-box;
+}
+.container-flex{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    justify-content: left;
+}
+.card{
+    width: 200px;
+    border: 1px solid rgb(218, 218, 218);
+    margin: 3px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card img{
+    width: inherit;
+}
+.card p{
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0;
+    width: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

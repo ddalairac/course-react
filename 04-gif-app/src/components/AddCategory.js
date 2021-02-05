@@ -6,7 +6,7 @@ export const AddCategory = ({handleAdd}) => {
     const [inputValue, setValue] = useState('')
 
     function handleInputChange(newValue) {
-        console.log(newValue)
+        // console.log(newValue)
         setValue(newValue)
     }
     function handleSubmit(e) {
