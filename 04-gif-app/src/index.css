@@ -19,6 +19,7 @@ body{
 }
 .card img{
     width: inherit;
+    min-height: 100px;
 }
 .card p{
     padding: 5px 10px;
