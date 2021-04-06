@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 export const Message = () => {
-    useEffect(() => {
+        useEffect(() => {
         console.log("componente montado: add Listener")
         const mousemoveHandler = (e) => {
             console.log("addEventListener")
@@ -18,4 +18,5 @@ export const Message = () => {
             <h1>bla</h1>
         </>
     )
+
 }
