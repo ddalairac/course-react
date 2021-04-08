@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 
 
 export const useFetch = (url) => {
@@ -9,7 +9,16 @@ export const useFetch = (url) => {
         error: null
     }
     const [state, setstate] = useState(initialState)
+    const isMountedRef = useRef(true)
 
+    // si el componente esta desmontado
+    useEffect(() => {
+        return () => {
+            isMountedRef.current = false
+        }
+    }, [])
+
+    // si cambia la URL
     useEffect(() => {
         setstate({
             data: null,
@@ -19,16 +28,18 @@ export const useFetch = (url) => {
 
         fetch(url)
             .then(resp => {
-                // console.log("resp", resp);
                 return resp.json();
             })
             .then(data => {
-                // console.log("data", data);
-                setstate({
-                    loading: false,
-                    error: null,
-                    data: data
-                })
+                if (isMountedRef.current) { // si el componente esta montado cambiar estado
+                    setstate({
+                        loading: false,
+                        error: null,
+                        data: data
+                    })
+                } else {
+                    console.log("Cambio de estado cancelado, por componente desmontado")
+                }
             })
 
     }, [url])

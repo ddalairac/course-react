@@ -1,0 +1,13 @@
+body{
+    padding:50px;
+}
+.form-group{
+    margin-bottom: 5px;
+}
+.text-right{
+    text-align: right;
+}
+
+.form-control{
+    margin-bottom: 10px;
+}

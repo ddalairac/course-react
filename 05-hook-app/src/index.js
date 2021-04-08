@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MultipleCustomHooks } from './components/03-examples/MultipleCustomHooks';
+import { LayoutEffectComp } from './components/05-useLayoutEffect/LayoutEffectComp';
+// import { UseRefExample } from './components/04-useRef/UseRefExample';
+// import { FocusScreen } from './components/04-useRef/FocusScreen';
+// import { MultipleCustomHooks } from './components/03-examples/MultipleCustomHooks';
 // import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook';
 // import { SimpleForm } from './components/02-useEffect/SimpleForm';
 // import { CounterWithCustomHook } from './components/01-useState/CounterWithCustomHook';
@@ -16,7 +19,10 @@ ReactDOM.render(
     {/* <CounterWithCustomHook /> */}
     {/* <SimpleForm /> */}
     {/* <FormWithCustomHook /> */}
-    <MultipleCustomHooks />
+    {/* <MultipleCustomHooks /> */}
+    {/* <FocusScreen /> */}
+    {/* <UseRefExample /> */}
+    <LayoutEffectComp />
   </React.StrictMode>,
   document.getElementById('root')
 );
