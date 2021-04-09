@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Memorize } from './components/06-memos/Memorize';
+import { Padre } from './components/07-tarea-memo/Padre';
+// import { CallbackHook } from './components/06-memos/CallbackHook';
+// import { MemoHook } from './components/06-memos/MemoHook';
+// import { Memorize } from './components/06-memos/Memorize';
 // import { LayoutEffectComp } from './components/05-useLayoutEffect/LayoutEffectComp';
 // import { UseRefExample } from './components/04-useRef/UseRefExample';
 // import { FocusScreen } from './components/04-useRef/FocusScreen';
@@ -24,7 +27,11 @@ ReactDOM.render(
     {/* <FocusScreen /> */}
     {/* <UseRefExample /> */}
     {/* <LayoutEffectComp /> */}
-    <Memorize />
+    {/* <Memorize /> */}
+    {/* <MemoHook /> */}
+    {/* <CallbackHook /> */}
+    <Padre />
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
