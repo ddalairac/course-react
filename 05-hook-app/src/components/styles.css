@@ -14,3 +14,12 @@ body{
 button{
     margin: 3px;;
 }
+.todo-li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-li.complete span{
+    text-decoration: line-through;
+}
