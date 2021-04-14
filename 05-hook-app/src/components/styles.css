@@ -23,3 +23,6 @@ button{
 .todo-li.complete span{
     text-decoration: line-through;
 }
+.active{
+    background: aliceblue;
+}

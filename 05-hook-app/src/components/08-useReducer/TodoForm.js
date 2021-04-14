@@ -28,7 +28,7 @@ export const TodoForm = ({ dispatch }) => {
                 onChange={handleInputChange}
                 value={description}
                 className="form-control" />
-            <button tye="submit" className="btn btn-outline-danger">Agregar</button>
+            <button type="submit" className="btn btn-outline-danger">Agregar</button>
         </form>
     )
 }

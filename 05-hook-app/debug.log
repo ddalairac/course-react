@@ -2,3 +2,5 @@
 [0406/134144.989:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [0408/115143.787:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
 [0409/080719.391:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0413/084201.529:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
+[0413/183242.087:ERROR:registration_protocol_win.cc(130)] TransactNamedPipe: Ha terminado la canalización. (0x6D)
