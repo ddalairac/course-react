@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Redirect, useParams } from 'react-router'
 import { getHerosById } from '../../selectors/getHerosById';
 
 export const HeroScreen = ({history}) => {
     const params = useParams()
-    console.log(params)
+    console.log(params) 
     const { heroId } = params
-    const hero = getHerosById(heroId)
-    console.log(hero)
+    // const hero = getHerosById(heroId)
+    const hero = useMemo(() => getHerosById(heroId), [heroId]) 
+    // console.log(hero)
     if (!hero) {
         return <Redirect to="/" />
     }
@@ -32,7 +33,7 @@ export const HeroScreen = ({history}) => {
             <hr />
             <div className="row no-gutters">
                 <div className="col-md-4">
-                    <img src={`../assets/heroes/${id}.jpg`} className="img-thumbnail" alt={superhero} />
+                    <img src={`../assets/heroes/${id}.jpg`} className="img-thumbnail animate__animated animate__fadeInLeft" alt={superhero} />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
