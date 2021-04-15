@@ -6,7 +6,7 @@ export const HeroCard = ({ hero }) => {
         id,
         superhero,
         // publisher,
-        // alter_ego,
+        alter_ego,
         // first_appearance,
         // characters
     } = hero
@@ -20,6 +20,7 @@ export const HeroCard = ({ hero }) => {
                 <div className="col-lg-8">
                     <div className="card-body">
                         <h5 className="card-title">{superhero}</h5>
+                        <p className="card-text">{alter_ego}</p>
                         {/* <p className="card-text">
                             first_appearance: {first_appearance}<br />
                             { (alter_ego !== characters) && "alter_ego: "+alter_ego}<br />
