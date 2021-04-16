@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { imgpath } from '../../helpers/imgpath'
 
 export const HeroCard = ({ hero }) => {
     const {
@@ -10,12 +11,12 @@ export const HeroCard = ({ hero }) => {
         // first_appearance,
         // characters
     } = hero
-    
+    // console.log("imgpath",imgpath(`./${id}.jpg`).default)
     return (
         <div className="card ms-3  animate__animated animate__fadeIn" style={{ maxWidth: 540 }}>
             <div className="row no-gutters">
                 <div className="col-lg-4">
-                    <img src={`./assets/heroes/${id}.jpg`} className="card-img" alt={superhero} />
+                    <img src={imgpath(`./${id}.jpg`).default} className="card-img" alt={superhero} />
                 </div>
                 <div className="col-lg-8">
                     <div className="card-body">
