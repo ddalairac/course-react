@@ -9,31 +9,26 @@ export const LoginScreen = ({ history }) => {
         userName: '',
         password: ''
     })
+    const loggetPath = localStorage.getItem('lastpath') || '/' 
 
     function handleLogin(e) {
         e.preventDefault()
-     
-        
         if (userName && userName.trim().length > 0 && password && password.trim().length > 0) {
             let newUser = {
                 name: userName,
-                // password: password,
-                // logged: true
             }
             let action = {
                 payload: newUser,
                 type: types.login,
             }
-
             dispatch(action)   
-            // console.log("history", history)
             // history.push("/") // agrega una ruta al historial de navegacion
-            history.replace("/") // reemplaza en el navegador la ruta actual por la que se le pasa.
+            history.replace(loggetPath) // reemplaza en el navegador la ruta actual por la que se le pasa.
         } else {
             console.log("user o password esta vacio")
         }
-
     }
+    
     return (
         <div className="login">
             <div className="card" >

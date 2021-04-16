@@ -2,7 +2,7 @@ import { heroes } from "../mocks/herosMock";
 
 
 export const getHerosByPublisher = (publisher = "") => {
-    console.log("getHerosByPublisher:",publisher)
+    // console.log("getHerosByPublisher:",publisher)
     const validPublishers = ['DC Comics', 'Marvel Comics']
     
     if(publisher && !validPublishers.includes(publisher)){

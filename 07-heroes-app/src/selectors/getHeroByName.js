@@ -1,7 +1,7 @@
 import { heroes } from "../mocks/herosMock";
 
 export const getHeroByName = (str = '') => {
-    console.log("getHeroByName: ",str)
+    // console.log("getHeroByName: ",str)
     if(str===''){
         return []
     }
