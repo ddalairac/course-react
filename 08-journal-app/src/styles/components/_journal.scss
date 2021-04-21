@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: row;
     height: 100%;
-    background: red;
+    // background: red;
 
     main{
         flex-grow: 2;
@@ -23,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
 
     h3 {
         font-weight: lighter;
@@ -55,7 +56,6 @@
     display: flex;
     margin-bottom: 10px;
     overflow: hidden;
-    padding: 3px 5px;
 }
 .journal__entry-pinture {
     height: 75px;

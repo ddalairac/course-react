@@ -7,9 +7,14 @@
     cursor: pointer;
     border-radius: 2px;
     color: white;
+    transition: color .3s;
     &:focus{
         outline: none;
         box-shadow: 0 0 3px 1px $light-grey;
+    }
+    
+    &:hover{
+        color: darken($color: white, $amount: 20);
     }
 }
 .btn-primary {

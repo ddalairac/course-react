@@ -1,4 +1,5 @@
 import React from 'react'
+import { NotesScreen } from '../notes/NotesScreen'
 import { NothigSelected } from './NothigSelected'
 import { SideBar } from './SideBar'
 
@@ -8,7 +9,8 @@ export const JournalScreen = () => {
             <SideBar />
             <main>
                 {/* <h1>Journal Screen</h1> */}
-                <NothigSelected/>
+                <NotesScreen/>
+                {/* <NothigSelected/> */}
             </main>
         </div>
     )
