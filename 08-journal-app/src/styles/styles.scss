@@ -1,4 +1,11 @@
 html, body {
     // background: blue;
-    margin: 30px;
+    // margin: 30px;
 }
+@import './base/settings';
+@import './base/base';
+@import './components/auth';
+@import './components/buttons';
+@import './components/links';
+@import './components/journal';
+@import './components/nothing';
