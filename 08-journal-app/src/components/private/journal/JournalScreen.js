@@ -1,6 +1,6 @@
 import React from 'react'
 import { NotesScreen } from '../notes/NotesScreen'
-import { NothigSelected } from './NothigSelected'
+// import { NothigSelected } from './NothigSelected'
 import { SideBar } from './SideBar'
 
 export const JournalScreen = () => {
