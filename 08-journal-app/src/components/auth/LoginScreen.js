@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { loginAction } from '../../actions/auth';
+import { startGoogleLoginMW, startLoginMW } from '../../actions/auth';
 import { useForm } from "../../hooks/useForm";
 
 
@@ -15,10 +15,14 @@ export const LoginScreen = () => {
     const { email, password } = formState;
 
 
+    function handleGoogleLogin() {
+        dispatch(startGoogleLoginMW());
+    }
     function handleSubmit(e) {
         e.preventDefault()
         console.log("submit",formState)
-        dispatch(loginAction(12345,'email'))
+        dispatch(startLoginMW(email,password))
+        reset()
     }
     return (
         <>
@@ -30,7 +34,7 @@ export const LoginScreen = () => {
                 <hr />
                 <div className="auth__social-network">
                     <p>Login con red social</p>
-                    <div className="google-btn"                >
+                    <div className="google-btn" onClick={handleGoogleLogin}               >
                         <div className="google-icon-wrapper">
                             <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                         </div>
