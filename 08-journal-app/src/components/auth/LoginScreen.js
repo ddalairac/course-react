@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { startGoogleLoginMW, startLoginMW } from '../../actions/auth';
@@ -7,19 +7,13 @@ import { useForm } from "../../hooks/useForm";
 
 export const LoginScreen = () => {
     const dispatch = useDispatch();
-    const state = useSelector(state => state)
-    useEffect(() => {
-        console.log("----state", state)
-    }, [state])
-    
-    const { msjError } = state.ui
+    const { msjError } = useSelector(state => state.ui)
 
     const [formState, handleInputChange] = useForm({
         email: '',
         password: '',
     });
     const { email, password } = formState;
-
 
     function handleGoogleLogin() {
         dispatch(startGoogleLoginMW());
@@ -28,7 +22,6 @@ export const LoginScreen = () => {
         e.preventDefault()
         console.log("submit", formState)
         dispatch(startLoginMW(email, password))
-        // reset()
     }
     return (
         <>

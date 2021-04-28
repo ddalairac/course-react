@@ -43,7 +43,7 @@ export const RegisterScreen = () => {
     function handleSubmit(e) {
         e.preventDefault()
         if (isFormValid()) {
-            console.log("submit", formState)
+            // console.log("submit", formState)
             dispatch(startRegisterWhithNameEmailPassMW(fullname, email, password))
         }
     }
