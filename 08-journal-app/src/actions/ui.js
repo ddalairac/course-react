@@ -7,3 +7,9 @@ export const setErrorAction = (err) => ({
 export const removeErrorAction = () => ({
     type: types.uiRmoveError
 })
+export const loadingStartAction = () => ({
+    type: types.uiLoadingStart,
+})
+export const loadingFinishAction = () => ({
+    type: types.uiLoadingFinish,
+})

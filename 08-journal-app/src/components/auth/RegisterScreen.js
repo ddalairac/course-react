@@ -49,7 +49,7 @@ export const RegisterScreen = () => {
     }
     return (
         <>
-            <h1 className="auth__title mb-5">Register Screen</h1>
+            <h1 className="auth__title mb-5">Registrarme</h1>
             <form onSubmit={handleSubmit}>
                 {msjError && <div className="auth__alert-error">{msjError}</div>}
                 <input className="auth_input" type="text" placeholder="Nombre completo" name="fullname" autoComplete="off" value={fullname} onChange={handleInputChange} />
