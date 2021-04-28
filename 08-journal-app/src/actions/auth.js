@@ -58,7 +58,7 @@ export const startRegisterWhithNameEmailPassMW = (fullname, email, password) => 
 }
 export const loginMW = (userCredential) => {
     return (dispatch) => {
-        console.log("userCredential: ",userCredential)
+        // console.log("userCredential: ",userCredential)
         const { user } = userCredential;
         const { displayName, uid } = user;
         if (displayName && uid) {
@@ -70,6 +70,14 @@ export const loginMW = (userCredential) => {
     }
 }
 
+export const startlogoutMW = () => {
+    return async (dispatch)=>{
+        dispatch(loadingStartAction())
+        await firebase.auth().signOut();
+        dispatch(loadingFinishAction())
+        dispatch(logoutAction())
+    }
+}
 // actions
 export const loginAction = (uid, displayName) => {
     return {

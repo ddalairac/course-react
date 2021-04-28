@@ -28,7 +28,7 @@ export const LoginScreen = () => {
             <h1 className="auth__title mb-5">Login</h1>
             <form onSubmit={handleSubmit}>
                 {msjError && <div className="auth__alert-error">{msjError}</div>}
-                <input className="auth_input" type="text" placeholder="Email" name="email" autoComplete="off" value={email} onChange={handleInputChange} />
+                <input className="auth_input" type="text" placeholder="Email" name="email" value={email} onChange={handleInputChange} />
                 <input className="auth_input" type="password" placeholder="Password" name="password" value={password} onChange={handleInputChange} />
                 <button type="submit" className="btn btn-primary btn-block" disabled={false}>Login</button>
                 <hr />

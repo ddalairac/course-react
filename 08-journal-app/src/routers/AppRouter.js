@@ -9,25 +9,28 @@ import { AuthRoutes } from './AuthRoutes';
 import { PrivateRouter } from './PrivateRouter';
 import { PrivateRoutes } from './PrivateRoutes';
 import { loginAction } from '../actions/auth';
+import { loadingFinishAction, loadingStartAction } from '../actions/ui';
 
 export const AppRouter = () => {
     const dispatch = useDispatch()
-    const state = useSelector(state => state)
-    const { auth, ui } = state
+    const store = useSelector(store => store)
+    const { auth, ui } = store
     const { loading } = ui
 
     useEffect(() => {
+        dispatch(loadingStartAction())
         firebase.auth().onAuthStateChanged(user => {
-            console.log("onAuthStateChanged user", user)
+            // console.log("onAuthStateChanged user", user)
+            dispatch(loadingFinishAction())
             if (user && user.uid && user.displayName) {
                 dispatch(loginAction(user.uid, user.displayName))
             }
         })
     }, [dispatch])
 
-    useEffect(() => {
-        console.log("----state", state)
-    }, [state])
+    // useEffect(() => {
+    //     console.log("Store\n----------------------\n", store)
+    // }, [store])
 
     return (
         <Router>

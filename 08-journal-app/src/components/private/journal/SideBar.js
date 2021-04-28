@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { JournalEntries } from './JournalEntries'
-import { logoutAction } from '../../../actions/auth'
+import { startlogoutMW } from '../../../actions/auth'
 export const SideBar = () => {
     
     const dispatch = useDispatch();
     function handleLogout(){
-        dispatch(logoutAction())
+        dispatch(startlogoutMW())
     }
     return (
         <aside className="journal__sidebar">
