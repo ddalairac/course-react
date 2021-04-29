@@ -20,7 +20,7 @@ export const LoginScreen = () => {
     }
     function handleSubmit(e) {
         e.preventDefault()
-        console.log("submit", formState)
+        // console.log("submit", formState)
         dispatch(startLoginMW(email, password))
     }
     return (

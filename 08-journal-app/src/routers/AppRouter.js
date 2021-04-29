@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { BrowserRouter as Router, Switch } from "react-router-dom";
@@ -17,6 +17,8 @@ export const AppRouter = () => {
     const { auth, ui } = store
     const { loading } = ui
 
+    const [isLogged, setIsLogged] = useState(false)
+
     useEffect(() => {
         dispatch(loadingStartAction())
         firebase.auth().onAuthStateChanged(user => {
@@ -28,6 +30,10 @@ export const AppRouter = () => {
         })
     }, [dispatch])
 
+    useEffect(() => {
+        setIsLogged(!!(auth && auth.uid && auth.fullname))
+    }, [auth])
+
     // useEffect(() => {
     //     console.log("Store\n----------------------\n", store)
     // }, [store])
@@ -37,8 +43,8 @@ export const AppRouter = () => {
             <>
                 {loading && <Prealoader />}
                 <Switch>
-                    <AuthRouter path="/auth" component={AuthRoutes} isAutenticated={!!(auth && auth.uid && auth.fullname)} />
-                    <PrivateRouter path="/" component={PrivateRoutes} isAutenticated={!!(auth && auth.uid && auth.fullname)} />
+                    <AuthRouter path="/auth" component={AuthRoutes} isAutenticated={isLogged} />
+                    <PrivateRouter path="/" component={PrivateRoutes} isAutenticated={isLogged} />
                 </Switch>
             </>
         </Router>

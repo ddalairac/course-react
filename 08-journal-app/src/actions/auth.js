@@ -14,7 +14,7 @@ export const startLoginMW = (email, password) => {
             })
             .catch(error => {
                 dispatch(loadingFinishAction())
-                console.warn("startLoginMW Error: ", error)
+                // console.warn("startLoginMW Error: ", error)
                 const { message } = error
                 if (message) dispatch(setErrorAction(message))
             })
@@ -31,7 +31,7 @@ export const startGoogleLoginMW = () => {
             })
             .catch(error => {
                 dispatch(loadingFinishAction())
-                console.warn("startGoogleLoginMW Error: ", error)
+                // console.warn("startGoogleLoginMW Error: ", error)
                 const { message } = error
                 if (message) dispatch(setErrorAction(message))
             })
@@ -50,7 +50,7 @@ export const startRegisterWhithNameEmailPassMW = (fullname, email, password) => 
             })
             .catch(error => {
                 dispatch(loadingFinishAction())
-                console.warn("startRegisterWhithNameEmailPassMW Error: ", error)
+                // console.warn("startRegisterWhithNameEmailPassMW Error: ", error)
                 const { message } = error
                 if (message) dispatch(setErrorAction(message))
             })
@@ -64,7 +64,7 @@ export const loginMW = (userCredential) => {
         if (displayName && uid) {
             dispatch(loginAction(uid, displayName))
         } else {
-            console.warn("loginAction Error: No se pudo obtener el uid o el displayName")
+            // console.warn("loginAction Error: No se pudo obtener el uid o el displayName")
             dispatch(setErrorAction('No se pudo obtener el uid o el displayName'))
         }
     }
