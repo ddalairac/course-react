@@ -10,6 +10,7 @@ import { PrivateRouter } from './PrivateRouter';
 import { PrivateRoutes } from './PrivateRoutes';
 import { loginAction } from '../actions/auth';
 import { loadingFinishAction, loadingStartAction } from '../actions/ui';
+import { startLoadingNotesMW } from '../actions/notes';
 
 export const AppRouter = () => {
     const dispatch = useDispatch()
@@ -21,11 +22,12 @@ export const AppRouter = () => {
 
     useEffect(() => {
         dispatch(loadingStartAction())
-        firebase.auth().onAuthStateChanged(user => {
-            // console.log("onAuthStateChanged user", user)
+        firebase.auth().onAuthStateChanged(async user => {
+            const {uid, displayName} = user
             dispatch(loadingFinishAction())
-            if (user && user.uid && user.displayName) {
+            if (uid && displayName) {
                 dispatch(loginAction(user.uid, user.displayName))
+                dispatch(startLoadingNotesMW(uid))
             }
         })
     }, [dispatch])
