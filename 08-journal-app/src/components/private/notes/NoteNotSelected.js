@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const NothigSelected = () => {
+export const NoteNotSelected = () => {
     return (
         <div className="nothig__content">
             <p>Select something <br/> or create an entry</p>

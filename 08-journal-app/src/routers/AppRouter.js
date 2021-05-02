@@ -9,36 +9,39 @@ import { AuthRoutes } from './AuthRoutes';
 import { PrivateRouter } from './PrivateRouter';
 import { PrivateRoutes } from './PrivateRoutes';
 import { loginAction } from '../actions/auth';
-import { loadingFinishAction, loadingStartAction } from '../actions/ui';
 import { startLoadingNotesMW } from '../actions/notes';
+import { loadingFinishAction, loadingStartAction } from '../actions/ui';
 
 export const AppRouter = () => {
     const dispatch = useDispatch()
-    const store = useSelector(store => store)
-    const { auth, ui } = store
-    const { loading } = ui
 
+    const auth = useSelector(store => store.auth)
     const [isLogged, setIsLogged] = useState(false)
+    
+    const { loading } = useSelector(store => store.ui)
+    // const [isLoading, setIsLoading] = useState(false)
+    // useEffect(() => {
+    //     console.log("loading",loading)
+    //     setIsLoading(loading)
+    // }, [loading])
 
     useEffect(() => {
         dispatch(loadingStartAction())
         firebase.auth().onAuthStateChanged(async user => {
-            const {uid, displayName} = user
-            dispatch(loadingFinishAction())
-            if (uid && displayName) {
-                dispatch(loginAction(user.uid, user.displayName))
-                dispatch(startLoadingNotesMW(uid))
+            if (user) {
+                const { uid, displayName } = user
+                if (uid && displayName) {
+                    dispatch(loginAction(uid, displayName))
+                    dispatch(startLoadingNotesMW(uid))
+                }
             }
+            dispatch(loadingFinishAction())
         })
-    }, [dispatch])
+    }, [dispatch, setIsLogged])
 
     useEffect(() => {
         setIsLogged(!!(auth && auth.uid && auth.fullname))
     }, [auth])
-
-    // useEffect(() => {
-    //     console.log("Store\n----------------------\n", store)
-    // }, [store])
 
     return (
         <Router>

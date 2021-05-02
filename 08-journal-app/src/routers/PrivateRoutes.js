@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router'
-import { JournalScreen } from '../components/private/journal/JournalScreen';
+import { JournalScreen } from '../components/private/JournalScreen';
 
 export const PrivateRoutes = () => {
     return (

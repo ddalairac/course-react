@@ -30,8 +30,10 @@ export const startNewNoteMW = () => {
 
 export const startLoadingNotesMW = (uid) => {
     return async (dispatch)=>{
+        dispatch(loadingStartAction())
         const notes = await loadNotes(uid)
         dispatch(setNoteAction(notes))
+        dispatch(loadingFinishAction())
     }
 }
 
