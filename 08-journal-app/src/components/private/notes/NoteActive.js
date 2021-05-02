@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useForm } from '../../../hooks/useForm'
 import { NotesAppBar } from './NotesAppBar'
-import { activeNoteAction } from '../../../actions/notes'
+import { activeNoteAction,startDeleteNoteMW } from '../../../actions/notes'
 
 export const NoteActive = () => {
     const dispatch = useDispatch();
@@ -24,6 +24,9 @@ export const NoteActive = () => {
         dispatch(activeNoteAction(formState.id, { ...formState }))
     }, [formState, dispatch])
 
+    function handleDelete(){
+        dispatch(startDeleteNoteMW(note.id))
+    }
     return (
         <div className="notes__main-content">
             <NotesAppBar />
@@ -37,6 +40,8 @@ export const NoteActive = () => {
                     </div>
                 }
             </div>
+
+            <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
         </div>
     )
 }

@@ -35,6 +35,20 @@
     width: 100%;
 }
 
+.btn-danger{
+    background: $danger;
+    color: white;
+    &:disabled {
+        background: lighten($color: $danger, $amount: 15);
+    }
+    &:hover{
+        background: darken($color: $danger, $amount: 15);
+    }
+    &:focus{
+        outline: none;
+        box-shadow: 0 0 3px 1px lighten($color: $danger, $amount: 15);
+    }
+}
 
 
 .google-btn {

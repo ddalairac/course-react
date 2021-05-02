@@ -4,10 +4,11 @@ import { JournalEntry } from './JournalEntry'
 
 export const JournalEntries = () => {
     const notes = useSelector(store => store.notes.notes)
-    // console.log("re render JournalEntries", notes)
+    const sortNotes = notes.sort((a, b) => (a.date < b.date) ? 1 : -1)
+    // console.log("re render JournalEntries", sortNotes)
     return (
         <div className="journal__entries">
-            {notes.map(note => (
+            {sortNotes.map(note => (
                 <JournalEntry key={note.id} note={note} />
             ))}
         </div>

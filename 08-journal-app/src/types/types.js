@@ -8,7 +8,7 @@ export const types = {
     uiLoadingStart:'[UI] Loading Start',
     uiLoadingFinish:'[UI] Loading Finish',
 
-    noteAddNew:'[notes] New note',
+    notesAddNew:'[notes] New note',
     noteActive:'[notes] Set active note',
     notesLoad:'[notes] Load notes',
     noteUpdated:'[notes] Update note',

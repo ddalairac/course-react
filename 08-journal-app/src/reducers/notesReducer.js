@@ -1,20 +1,21 @@
 import { types } from "../types/types"
 
 const initialState = {
-    notes:[],
-    active:null,
+    notes: [],
+    active: null,
 }
 
-export const notesReducer = (state = initialState, action)=> {
+export const notesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case types.noteAddNew:
+        case types.notesAddNew:
             return {
-                ...state
+                ...state,
+                notes: [ {...action.payload}, ...state.notes ]
             }
         case types.noteActive:
             return {
                 ...state,
-                active:{
+                active: {
                     ...action.payload
                 }
             }
@@ -26,6 +27,11 @@ export const notesReducer = (state = initialState, action)=> {
         case types.noteUpdated:
             return {
                 ...state,
+                notes: state.notes.map(
+                    note => note.id === action.payload.id
+                        ? action.payload.note
+                        : note
+                )
             }
         case types.noteFileUrl:
             return {
@@ -34,12 +40,14 @@ export const notesReducer = (state = initialState, action)=> {
         case types.noteDelete:
             return {
                 ...state,
+                active: null,
+                notes: state.notes.filter(note => note.id !== action.payload)
             }
         case types.noteLogoutClean:
             return {
                 ...state,
             }
-            
+
         default:
             return state
     }
