@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { firebase } from '../firebase/firebase-config';
@@ -11,42 +11,38 @@ import { PrivateRoutes } from './PrivateRoutes';
 import { loginAction } from '../actions/auth';
 import { startLoadingNotesMW } from '../actions/notes';
 import { loadingFinishAction, loadingStartAction } from '../actions/ui';
+import { errorHandler } from '../helpers/errorHandler';
 
 export const AppRouter = () => {
     const dispatch = useDispatch()
-
-    const auth = useSelector(store => store.auth)
     const [isLogged, setIsLogged] = useState(false)
-    
-    const { loading } = useSelector(store => store.ui)
-    // const [isLoading, setIsLoading] = useState(false)
-    // useEffect(() => {
-    //     console.log("loading",loading)
-    //     setIsLoading(loading)
-    // }, [loading])
 
     useEffect(() => {
         dispatch(loadingStartAction())
-        firebase.auth().onAuthStateChanged(async user => {
-            if (user) {
-                const { uid, displayName } = user
-                if (uid && displayName) {
+        try {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user && user.uid && user.displayName) {
+                    const { uid, displayName } = user
                     dispatch(loginAction(uid, displayName))
                     dispatch(startLoadingNotesMW(uid))
+                    setIsLogged(true)
+                } else {
+                    setIsLogged(false)
                 }
-            }
+            })
+        } catch (error) {
+            errorHandler(error, 'onAuthStateChanged')
+            setIsLogged(false)
+        } finally {
             dispatch(loadingFinishAction())
-        })
+        }
     }, [dispatch, setIsLogged])
 
-    useEffect(() => {
-        setIsLogged(!!(auth && auth.uid && auth.fullname))
-    }, [auth])
 
     return (
         <Router>
             <>
-                {loading && <Prealoader />}
+                <Prealoader />
                 <Switch>
                     <AuthRouter path="/auth" component={AuthRoutes} isAutenticated={isLogged} />
                     <PrivateRouter path="/" component={PrivateRoutes} isAutenticated={isLogged} />

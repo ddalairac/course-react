@@ -9,7 +9,7 @@ export const NoteActive = () => {
 
     const { active: note } = useSelector(store => store.notes)
     const [formState, handleInputChange, reset] = useForm(note);
-    const { title, body, url } = formState
+    const { title, body, url, id } = formState
 
     const activeId = useRef(note.id);
 
@@ -21,11 +21,13 @@ export const NoteActive = () => {
     }, [note, reset])
 
     useEffect(() => {
+        
+        console.log("NoteActive dispatch")
         dispatch(activeNoteAction(formState.id, { ...formState }))
     }, [formState, dispatch])
 
     function handleDelete(){
-        dispatch(startDeleteNoteMW(note.id))
+        dispatch(startDeleteNoteMW(id))
     }
     return (
         <div className="notes__main-content">

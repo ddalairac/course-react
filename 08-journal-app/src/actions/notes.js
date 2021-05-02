@@ -6,6 +6,7 @@ import { uploadFile } from "../helpers/uploadFile"
 import { types } from "../types/types"
 import { loadingFinishAction, loadingStartAction } from "./ui"
 
+// Midlewares 
 export const startNewNoteMW = () => {
     return async (dispatch, getState) => {
         dispatch(loadingStartAction())
@@ -18,7 +19,7 @@ export const startNewNoteMW = () => {
                 url: ''
             }
             const doc = await db.collection(`${uid}/journal/notes`).add(newNote)
-            dispatch(addNewNote(doc.id, newNote))
+            dispatch(addNewNoteAction(doc.id, newNote))
             dispatch(activeNoteAction(doc.id, newNote))
         } catch (error) {
             errorHandler(error, 'startNewNoteMW')
@@ -105,7 +106,8 @@ export const startUploadingMW = (file) => {
 }
 
 
-export const addNewNote = (id, note) => ({
+// actions
+export const addNewNoteAction = (id, note) => ({
     type: types.notesAddNew,
     payload: {
         id, ...note
@@ -135,4 +137,8 @@ export const updateNoteAction = (id, note) => ({
             ...note
         }
     }
+});
+export const cleanNotesAction = () => ({
+    type: types.notesLogoutClean,
+    payload: {}
 });
