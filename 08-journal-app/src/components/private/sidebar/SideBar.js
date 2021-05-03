@@ -13,7 +13,7 @@ export const SideBar = () => {
         dispatch(startNewNoteMW());
     }
     return (
-        <aside className="journal__sidebar">
+        <aside className="journal__sidebar animate__animated animate__fadeInLeft">
             <div className="journal__sidebar-navbar">
                 <h5><i className="fas fa-moon" /> {fullname}</h5>
                 <button className="btn" onClick={handleLogout}>Logout</button>

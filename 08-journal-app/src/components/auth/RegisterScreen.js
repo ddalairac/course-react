@@ -48,7 +48,7 @@ export const RegisterScreen = () => {
         }
     }
     return (
-        <>
+        <div className="animate__animated animate__fadeIn">
             <h1 className="auth__title mb-5">Registrarme</h1>
             <form onSubmit={handleSubmit}>
                 {msjError && <div className="auth__alert-error">{msjError}</div>}
@@ -60,6 +60,6 @@ export const RegisterScreen = () => {
 
                 <Link to="/auth/login" className="link ">Ya esta registrado?</Link>
             </form>
-        </>
+        </div>
     )
 }

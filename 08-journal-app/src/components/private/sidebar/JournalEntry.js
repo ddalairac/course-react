@@ -18,7 +18,7 @@ export const JournalEntry = ({ note }) => {
     }
 
     return (
-        <div className="journal__entry" onClick={handleEntryClick}>
+        <div className="journal__entry animate__animated animate__backInDown" onClick={handleEntryClick}>
             {   url &&
                 <div className="journal__entry-pinture" style={{
                     backgroundSize: 'cover',

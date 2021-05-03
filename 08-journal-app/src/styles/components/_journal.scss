@@ -4,7 +4,8 @@
     align-items: center;
     flex-direction: row;
     height: 100%;
-    // background: red;
+    background: black;
+    overflow-x: hidden;
 
     main{
         flex-grow: 2;

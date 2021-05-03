@@ -24,7 +24,7 @@ export const LoginScreen = () => {
         dispatch(startLoginMW(email, password))
     }
     return (
-        <>
+        <div className="animate__animated animate__fadeIn">
             <h1 className="auth__title mb-5">Login</h1>
             <form onSubmit={handleSubmit}>
                 {msjError && <div className="auth__alert-error">{msjError}</div>}
@@ -32,7 +32,7 @@ export const LoginScreen = () => {
                 <input className="auth_input" type="password" placeholder="Password" name="password" value={password} onChange={handleInputChange} />
                 <button type="submit" className="btn btn-primary btn-block" disabled={false}>Login</button>
                 <hr />
-                <div className="auth__social-network">
+                <div className="auth__social-network ">
                     <p>Login con red social</p>
                     <div className="google-btn" onClick={handleGoogleLogin}               >
                         <div className="google-icon-wrapper">
@@ -45,6 +45,6 @@ export const LoginScreen = () => {
                 </div>
                 <Link to="/auth/register" className="link">No estas registrado?</Link>
             </form>
-        </>
+        </div>
     )
 }
