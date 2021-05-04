@@ -22,3 +22,10 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# resueltos
+# exclude everything
+Resueltos/*
+
+# exception to the rule
+!Resueltos/.gitkeep 
