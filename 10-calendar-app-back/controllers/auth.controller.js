@@ -2,6 +2,7 @@
 const express = require('express');
 const UserModel = require('../models/User.model');
 const { request, response } = express;
+const bcrypt = require('bcryptjs');
 
 const userLogin = (req = request, res = response) => {
     console.log("post login")
@@ -40,7 +41,13 @@ const userRegister = async (req = request, res = response) => {
             });
         }
 
+        
+
         const newUser = new UserModel(req.body);
+        // encriptar password
+        const salt = bcrypt.genSaltSync();
+        newUser.password = bcrypt.hashSync(newUser.password, salt);
+        
         await newUser.save();
 
         return res
