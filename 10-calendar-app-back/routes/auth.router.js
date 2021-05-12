@@ -5,10 +5,15 @@ const { Router } = express;
 const router = Router();
 
 const { userLogin, userRegister, userRenewToken } = require('../controllers/auth.controller');
+const { loginValidations, registerValidations } = require('../validations/auth.validation');
 
 // verbo GET
-router.post('/', userLogin)
-router.post('/new', userRegister)
+router.post('/', loginValidations, userLogin)
+router.post(
+    '/new', //path
+    [...registerValidations],// middlewares validations array
+    userRegister // controller
+)
 router.get('/renew-token', userRenewToken)
 
 module.exports = router
