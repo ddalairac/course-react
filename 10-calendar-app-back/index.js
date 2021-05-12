@@ -1,5 +1,6 @@
 // Importar express
 const express = require('express');
+const { dbConnection } = require('./db/config');
 
 //Variables de entorno
 require('dotenv').config();
@@ -10,6 +11,9 @@ require('dotenv').config();
 
 //  crear express server
 const app = express();
+
+// DB connection
+dbConnection();
 
 // Directorio publico
 app.use(express.static('public'))
