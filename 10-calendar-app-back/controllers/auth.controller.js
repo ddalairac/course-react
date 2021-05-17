@@ -3,7 +3,7 @@ const express = require('express');
 const UserModel = require('../models/User.model');
 const { request, response } = express;
 const bcrypt = require('bcryptjs');
-const { setJWT } = require('../helpers/jwt');
+const { setJWT } = require('../helpers/jwt.helper');
 
 const userLogin = async (req = request, res = response) => {
     console.log("post login")
@@ -112,9 +112,26 @@ const userRegister = async (req = request, res = response) => {
 
 
 }
-const userRenewToken = (req = request, res = response) => {
+const userRenewToken = async (req = request, res = response) => {
     console.log("post renew token")
-    res.json({ ok: true, msg: 'renew token' })
+
+    try {
+        // let user = { uid: req.uid, name: req.name, email: req.email }
+        const token = await setJWT(req.user.uid, req.user.name, req.user.email);
+        return res.status(200).json({
+            ok: true,
+            msg: 'renew token',
+            user: req.user,
+            token: token
+        })
+    } catch (error) {
+        return res.status(500).json({
+            ok: false,
+            errors: {
+                msg: 'error al renovar token, contacte al admin'
+            }
+        });
+    }
 }
 
 
