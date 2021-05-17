@@ -89,7 +89,7 @@ const userRegister = async (req = request, res = response) => {
         await newUser.save();
 
         // Generate JWT
-        const token = await setJWT(validUser.id, validUser.name, validUser.email);
+        const token = await setJWT(newUser.id, newUser.name, newUser.email);
 
         return res
             .status(201)

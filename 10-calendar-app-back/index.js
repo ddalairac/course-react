@@ -1,6 +1,7 @@
 // Importar express
 const express = require('express');
 const { dbConnection } = require('./db/config');
+const cors = require('cors')
 
 //Variables de entorno
 require('dotenv').config();
@@ -14,6 +15,9 @@ const app = express();
 
 // DB connection
 dbConnection();
+
+// CORS
+app.use(cors())
 
 // Directorio publico
 app.use(express.static('public'))
