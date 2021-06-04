@@ -1,6 +1,7 @@
 # Course React
 
-### Course Udemy
+### Udemy Course
+Repo de pruebas para curso de React de Udemy: React: De cero a experto ( Hooks y MERN )<br>
 https://santec.udemy.com/course/react-cero-experto/learn/lecture/20406051?start=60#overview 
 
 ### Notas
