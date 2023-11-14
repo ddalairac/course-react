@@ -1,0 +1,28 @@
+
+.no-more-insights {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  .vds-card {
+    margin-bottom: 0;
+    .vds-card-body {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .fa-books {
+    color: var(--color-big-sky-500);
+    font-size: rem(64px);
+    margin-bottom: rem(16px);
+  }
+  .small-text {
+    font-weight: 700 !important;
+    font-size: rem(18px);
+    margin-bottom: rem(30px);
+  }
+}

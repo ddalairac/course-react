@@ -1,0 +1,40 @@
+
+.insights-section {
+  margin-bottom: rem(60px);
+  .insights-title {
+    color: var(--vds-branding-text-contrast, var(--color-galaxy-100));
+  }
+
+  // carousel
+  .vds-carousel {
+    padding: 0 rem(6px);
+
+    &.no-controls {
+      padding: 0;
+      margin: 0 rem(-10px);
+    }
+
+    .vds-controls {
+      left: 0;
+      .vds-btn-left {
+        margin-left: rem(-4px);
+      }
+      .vds-btn-right {
+        margin-right: rem(-4px);
+      }
+    }
+  }
+
+  .vds-carousel-item {
+    padding: 0 rem(12px);
+    height: inherit;
+
+    &.no-grow {
+      flex-shrink: 10;
+    }
+    &.grow {
+      flex-shrink: 1;
+      flex-grow: 1;
+    }
+  }
+}

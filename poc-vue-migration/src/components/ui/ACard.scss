@@ -1,0 +1,38 @@
+
+vds-card,
+.vds-card {
+  height: 100%;
+
+  &.hover-effect-active {
+    transition: border 0.3s;
+    border-bottom-width: var(--vds-card-border-top-width);
+    --vds-card-border-color: transparent;
+  }
+
+  .dashed-line {
+    border-bottom: 1px dashed var(--color-galaxy-100);
+  }
+
+  //  header
+  .vds-card-header {
+    border-bottom: none !important;
+    --vds-card-cap-padding-y: 0;
+
+    h3.vds-card-title {
+      font-weight: 600;
+      font-size: rem(20px);
+      color: var(--color-galaxy-700);
+    }
+  }
+
+  // body
+  .vds-card-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // footer
+  .vds-card-footer {
+    border-top: none;
+  }
+}

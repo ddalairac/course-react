@@ -1,0 +1,47 @@
+{
+  "session": {
+    "roles": [
+      {
+        "display_name": "",
+        "id": "440596c9-87a8-49ad-8aae-b6fcba368529",
+        "name": "admin",
+        "type": "user_management"
+      }
+    ],
+    "subdomain": "",
+    "tokens": {
+      "id": "eyJraWQiOiJLTld0MVFkMmwzalhhNHFGN1F0SmtkV2cyeGdzM193VEk5Mi1WanE5MzRrIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIwMHUxMTNwNTYzZFAxUDlGRzFkNyIsIm5hbWUiOiJTaHVyYSBUIiwiZW1haWwiOiJkeTZAZ21haWwuY29tIiwidmVyIjoxLCJpc3MiOiJodHRwczovL3BlcmNlcHR5eDEub2t0YXByZXZpZXcuY29tL29hdXRoMi9kZWZhdWx0IiwiYXVkIjoiMG9hdTNieTIyTVEzTVNHY28xZDYiLCJpYXQiOjE2NDI3NzU2NTIsImV4cCI6MTY0Mjc3OTI1MiwianRpIjoiSUQuVWE0bmRwRFBhZ2NkcjRSY1h2WlFBa1FQTERnT2stZXVSNVJvS0ItdlBlNCIsImFtciI6WyJwd2QiXSwiaWRwIjoiMDBvbGpqMXpqYkRRNFFmQTgxZDYiLCJub25jZSI6Ik1mSDdQTm9FZEdlU2ZYZTZSWGExUmlDTU53eEJlaHhUenlnWlNCejBOZz09IiwicHJlZmVycmVkX3VzZXJuYW1lIjoiZHk2QGdtYWlsLmNvbSIsImF1dGhfdGltZSI6MTY0Mjc3NTM5NSwiYXRfaGFzaCI6InNBWEZsb2RRci1sYWROblN3QUdheWcifQ.WUV1cnc-34nnw8Ct137JBodD4cXdZ--0sKDqeDeIBAWijQmOc6HUFo_5_kiaM3V5_0prJHpM04wbZYcm8fe6gDDDon3r6-v372LsSYtzfGdC9-LuchpJJmorjy2id38sqR4OjwCkOHglRtl-FRZMin4HT-N4W-z9e2ERd5yfWBcjDUaZCgkm4yhH_cnyYoySN8d9dhFdBD_AEnH2mWIfLzwwyFMy_xSb8bkuYSsu8F5i9ENGdVCiVZSIUPH4l-gPlx8dN9i4Jf2VocWdbAuMKeK1p8oT8WhLxQu5_Rdwvrgc_jTB_OXDPyEvtbs5WPr1m2C-DqU3rQ3MfXvPpTnrwA"
+    },
+    "user_info": {
+      "id": "0bbc3979-cace-4d8e-be23-4a6163355696",
+      "email": "pepeargento@gmail.com",
+      "username": "pepeargento",
+      "employee_id": "pepeargento123",
+      "first_name": "Pepe",
+      "last_name": "Argento",
+      "company_name": "",
+      "company_id": "2576128c-9321-4645-9b99-8d9df7207e81",
+      "customer_id": "",
+      "idp_reference_id": "00u113p563dP1P9FG1d7",
+      "created_at": "2021-07-16 01:06:36 +0000 UTC",
+      "created_by": "Derek Youssi",
+      "modified_at": "2021-07-16 01:06:36 +0000 UTC",
+      "status": "active",
+      "preferences": {
+        "lang": "en"
+      },
+      "roles": [
+        {
+          "id": "14a97b5f-e9a8-4e77-b4f1-bd53cb1e99cb",
+          "type": "user_management",
+          "name": "admin"
+        },
+        {
+          "id": "c75476a8-dc57-431c-a018-ba9e6fa61700",
+          "type": "perceptyx",
+          "name": "user access"
+        }
+      ]
+    }
+  }
+}

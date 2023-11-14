@@ -1,0 +1,8 @@
+
+// So all the cards have the same height
+.insight-type-container {
+  height: 100%;
+  > div {
+    height: 100%;
+  }
+}
